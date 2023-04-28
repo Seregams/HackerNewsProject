@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import AppRouter from "./components/AppRouter/AppRouter";
+import {useEffect} from "react";
+import {createTheme, ThemeProvider} from "@mui/material";
+import {green, grey,} from "@mui/material/colors";
+
 
 function App() {
+
+  // useEffect(() => {
+  //   if(AppRouter.isMounted) {
+  //     console.log(AppRouter.isMounted)
+  //     // setLoading(false)
+  //   }
+  // }, [])
+
+  const theme = createTheme({
+    palette: {
+      secondary: {
+        main: green[500],
+      },
+      info: {
+        main: grey[500]
+      },
+      typography: {
+        fontFamily: [
+          'Roboto',
+        ].join(','),
+      },
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ThemeProvider theme={theme}>
+          <AppRouter/>
+      </ThemeProvider>
   );
 }
 

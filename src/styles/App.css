@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+@media (max-width: 968px){
+  #root {
+    max-width: 100%;
+  }
+}
+
+.App {
+  width: 800px;
+}
+.container {
+  width: 100%;
+  flex-grow: 1;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
