@@ -8,7 +8,7 @@ import {getComment} from "../../../services/data";
 import IncludedComments from "./IncludedComments";
 import {FromUTC} from "../../Scripts/dateFormater";
 import Box from "@mui/material/Box";
-import ReactMarkdown from 'https://esm.sh/react-markdown@7'
+import ReactMarkdown from "react-markdown";
 
 const Comments = (data) => {
     const [dataIncludeComment, setDataIncludeComment] = useState([])
@@ -63,12 +63,12 @@ const Comments = (data) => {
                         <Typography component="div">{FromUTC(item.time)}</Typography>
                         <Typography component="div" sx={{overflowWrap: 'anywhere'}}><ReactMarkdown skipHtml={true}>{item.text}</ReactMarkdown></Typography>
                         <Box sx={{marginTop:2}}>
-                        {item.kids ?
-                            <Button onClick={()=> openIncludeComments(item)}
-                                    startIcon={showsIncludeComment ? <KeyboardArrowUpSharpIcon/> : <ExpandMoreSharpIcon/>}>
-                                {showsIncludeComment ? "Hide" : "Show all"}
-                            </Button>
-                            : <> </>}
+                            {item.kids ?
+                                <Button onClick={()=> openIncludeComments(item)}
+                                        startIcon={showsIncludeComment ? <KeyboardArrowUpSharpIcon/> : <ExpandMoreSharpIcon/>}>
+                                    {showsIncludeComment ? "Hide" : "Show all"}
+                                </Button>
+                                : <> </>}
                         </Box>
                         <>
                             {dataIncludeComment ? dataIncludeComment.map(includedItem =>

@@ -2,7 +2,7 @@ import React from 'react';
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {FromUTC} from "../../Scripts/dateFormater";
-import ReactMarkdown from 'https://esm.sh/react-markdown@7'
+import ReactMarkdown from "react-markdown";
 
 const IncludedComments = ({data, show, parent}) => {
     const included = data
