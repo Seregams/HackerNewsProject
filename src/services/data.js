@@ -7,7 +7,7 @@ export async function getDataIds () {
     const response = await axios.get(https)
     const dataIds = response.data
     const arr = []
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 100; i++) {
         const dataById = await axios.get(`https://hacker-news.firebaseio.com/v0/item/${dataIds[i]}.json?print=pretty`)
         arr.push(dataById.data)
     }
