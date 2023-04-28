@@ -47,7 +47,6 @@ const Comments = (data) => {
                 }
                 console.log("выход из рекурсии")
                 return setDataIncludeComment([...array])
-                // setDataIncludeComment(DataIncludeComment => ([...DataIncludeComment, ...includeCommRes]))
             }
             fetchIncludeComment(item.kids, mainId)
         }
